@@ -45,7 +45,7 @@ export default function Header() {
     }, []);
     return (
         // class="container-fluid fixed-top shadow"
-        <Container className={`fixed-top ${isShadow ? 'shadow' : ''}`} style={{ top: topOffset }} fluid>
+        <Container className={`fixed-top ${isShadow ? 'shadow ' : ''}`} style={{ top: topOffset }} fluid>
             <Container className="topbar  d-none d-lg-block">
                 <div className="d-flex justify-content-between">
                     <div className="top-info ps-2">
@@ -66,11 +66,11 @@ export default function Header() {
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="m-auto " navbar>
                             <NavItem>
-                                <Link className='nav-link' >Home</Link>
+                                <Link className='nav-link' to={"/"}>Trang chủ</Link>
                             </NavItem>
                             <NavItem>
-                                <Link className='nav-link'>
-                                    Shop
+                                <Link className='nav-link' to={"/product"}>
+                                    Sản phẩm
                                 </Link>
                             </NavItem>
                             <UncontrolledDropdown nav inNavbar>
@@ -86,13 +86,18 @@ export default function Header() {
                             </UncontrolledDropdown>
                             <NavItem>
                                 <Link to={"/contact"} className='nav-link'>
-                                    Contact
+                                    Liên hệ
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to={"*"} className='nav-link'>
+                                    Đăng nhập
                                 </Link>
                             </NavItem>
                         </Nav>
                         <Nav className="ms-5" navbar>
                             <NavItem className='d-flex'>
-                                <Input placeholder='Search here' className='rounded-5 w-50 ms-2' />
+                                <Input placeholder='Tìm kiếm' className='rounded-5 w-50 ms-2' />
                                 <Button className="btn-search btn border border-success btn-md-square rounded-circle bg-white ms-4"><FaSearch className='my-auto iconR' size={18} /></Button>
                                 <Link className=" ms-2 my-auto"><FaShoppingBag size={35} className='iconR' /></Link>
                                 <Link className=" ms-2 my-auto"><FaUser size={35} className='iconR' /></Link>

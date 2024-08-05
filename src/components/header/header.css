@@ -4,6 +4,11 @@
     border: 0;
 }
 
+/* .fixed-top.active {
+    background-color: #eef0eb;
+    color: #fff;
+} */
+
 .topbar {
     padding: 20px;
     border-radius: 230px 100px;

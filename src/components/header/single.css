@@ -4,4 +4,11 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 20px;
+    margin-top: 145px;
+}
+
+.page-header li a {
+    text-decoration: none;
+    color: #81c408;
 }

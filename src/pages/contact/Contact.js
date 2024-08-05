@@ -1,27 +1,26 @@
 import React from 'react'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import { Container } from 'reactstrap'
+import { Container, Row } from 'reactstrap'
 import SingleHeader from '../../components/header/SingleHeader'
 
 export default function Contact() {
-    const item = "Contact"
+    const title = "Liên hệ"
     return (
         <>
             <Header />
-            <SingleHeader item={item} />
-            <Container fluid className="contact py-5">
-                <div className="container py-5">
+            <SingleHeader title={title} />
+            <Container fluid className="contact ">
+                <Container className="container py-5">
                     <div className="p-5 bg-light rounded">
-                        <div className="row g-4">
+                        <Row className=" g-4">
                             <div className="col-12">
                                 <div className="text-center mx-auto" style={{ maxWidth: 700 }}>
-                                    <h1 className="text-primary">Get in touch</h1>
+                                    <h1 style={{ color: '#81c408' }}>Get in touch</h1>
                                     <p className="mb-4">
                                         The contact form is currently inactive. Get a functional and
                                         working contact form with Ajax &amp; PHP in a few minutes. Just
                                         copy and paste the files, add a little code and you're done.{" "}
-                                        <a href="https://htmlcodex.com/contact-form">Download Now</a>.
                                     </p>
                                 </div>
                             </div>
@@ -30,7 +29,7 @@ export default function Contact() {
                                     <iframe
                                         className="rounded w-100"
                                         style={{ height: 400 }}
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4425580300924!2d106.70411121460212!3d10.775843692319588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292921f1373d%3A0xb57e6d9e7c94233a!2sHo%20Chi%20Minh%20City%2C%20Vietnam!5e0!3m2!1sen!2sbd!4v1694259875981!5m2!1sen!2sbd"
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                     />
@@ -56,7 +55,8 @@ export default function Contact() {
                                         defaultValue={""}
                                     />
                                     <button
-                                        className="w-100 btn form-control border-secondary py-3 bg-white text-primary "
+                                        className="w-100 btn form-control border-secondary py-3 bg-white "
+                                        style={{ color: '#81c408' }}
                                         type="submit"
                                     >
                                         Submit
@@ -86,9 +86,9 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Row>
                     </div>
-                </div>
+                </Container>
             </Container>
             <Footer />
         </>
