@@ -1,21 +1,39 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
-import { Col, Container, Row } from 'reactstrap'
+import { Col, Container, Input, Row } from 'reactstrap'
 import Product from './Product'
 import "./products.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../../redux/productsSlice'
+import { fetchProducts, findProducts } from '../../redux/productsSlice'
+import Pagination from "react-js-pagination";
+import { Navigate, useNavigate } from 'react-router-dom'
+
 
 export default function Products() {
-    const { products, status, error } = useSelector(state => state.products)
+    const { products, status, error, totalPage } = useSelector(state => state.products)
+
     const dispatch = useDispatch()
+    const navigate = useNavigate();
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [keyword, setKeyword] = useState("")
 
     useEffect(() => {
-        if (status === "start") {
-            dispatch(fetchProducts())
-        }
-    }, [])
-    console.log(products)
+
+        dispatch(fetchProducts(currentPage))
+
+    }, [currentPage])
+    console.log(status)
+    // console.log(error)
+    const handle_search = () => {
+        dispatch(findProducts(keyword))
+        setKeyword("")
+    }
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
+    // console.log(products)
     return (
         <Container fluid className='py-5 fruite'>
             <Container className='py-3'>
@@ -25,7 +43,20 @@ export default function Products() {
                         <Row className="g-4">
                             <Col xl={3}>
                                 <div className="input-group w-100 mx-auto d-flex">
-                                    <input type="search" className="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1" />
+                                    <Input type="search" className="form-control p-3" placeholder="keywords"
+                                        value={keyword} onChange={(e) => setKeyword(e.target.value)}
+                                        onKeyDown={(e) => {
+                                            if (e.key == "Enter") {
+                                                if (keyword == "") {
+                                                    dispatch(fetchProducts(currentPage))
+                                                    // navigate('/product')
+                                                } else {
+                                                    handle_search()
+                                                }
+
+                                            }
+                                        }}
+                                    />
                                     <span id="search-icon-1" className="input-group-text p-3"><FaSearch /></span>
                                 </div>
                             </Col>
@@ -109,10 +140,24 @@ export default function Products() {
                             <Col lg={9}>
                                 <Row className='g-4 justify-content-center'>
                                     {/* product here */}
-
+                                    {/* {
+                                        status === "failed" ? alert("khong tim thay sản phẩm") : <p></p>
+                                    } */}
                                     {
-                                        products.map((item, index) => (<Product item={item} index={index} />))
+                                        products ? products.map((item, index) => (<Product item={item} index={index} />))
+                                            : navigate("*")
+
                                     }
+
+                                    <div>
+                                        <Pagination
+                                            activePage={currentPage}
+                                            itemsCountPerPage={6}
+                                            totalItemsCount={totalPage}
+                                            pageRangeDisplayed={5}
+                                            onChange={handlePageChange}
+                                        />
+                                    </div>
 
                                 </Row>
                             </Col>

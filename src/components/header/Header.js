@@ -6,13 +6,13 @@ import { IoLocation, IoLocationOutline, IoMailSharp } from "react-icons/io5";
 
 import "./header.css"
 export default function Header() {
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => setIsOpen(!isOpen);
-
     const [isShadow, setIsShadow] = useState(false);
     const [topOffset, setTopOffset] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => {
+        setIsOpen(!isOpen)
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,6 +20,7 @@ export default function Header() {
             const scrollTop = window.scrollY;
 
             if (width < 990) {
+                setTopOffset(0)
                 if (scrollTop > 60) {
                     setIsShadow(true);
                 } else {
@@ -42,10 +43,10 @@ export default function Header() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [setTopOffset]);
     return (
         // class="container-fluid fixed-top shadow"
-        <Container className={`fixed-top ${isShadow ? 'shadow ' : ''}`} style={{ top: topOffset }} fluid>
+        <Container className={`fixed-top ${isShadow ? 'shadow ' : ''}`} style={{ top: topOffset, }} fluid>
             <Container className="topbar  d-none d-lg-block">
                 <div className="d-flex justify-content-between">
                     <div className="top-info ps-2">
