@@ -57,6 +57,21 @@
     color: #81c408 !important;
 }
 
+.shopping-cart {
+    position: relative;
+}
+
+.qty {
+    position: absolute;
+    top: 0;
+    left: 28px;
+    height: 20px;
+    min-width: 20px;
+    background: #ffb524;
+    /* // style="top: -5px; left: 15px; height: 20px; min-width: 20px;" */
+
+}
+
 /* .nav-link li a {
     display: block;
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);

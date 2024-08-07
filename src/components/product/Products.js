@@ -19,9 +19,7 @@ export default function Products() {
     const [keyword, setKeyword] = useState("")
 
     useEffect(() => {
-
         dispatch(fetchProducts(currentPage))
-
     }, [currentPage])
     console.log(status)
     // console.log(error)

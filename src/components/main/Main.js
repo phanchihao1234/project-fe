@@ -7,10 +7,21 @@ import { Col, Container, Row } from 'reactstrap';
 import Slider2 from './slider/Slider2';
 import Banner from './banner/Banner';
 import Section1 from './section/Section1';
+import Slider3 from './slider/Slider3';
 
 
 
 export default function Main() {
+    const arr = [
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+        { id: 1, name: "img1" },
+    ]
 
     return (
         <>
@@ -23,22 +34,34 @@ export default function Main() {
                         </Col>
                         <Col md={12} lg={5} >
                             <Slider1 />
-
                         </Col>
                     </Row>
                 </Container>
             </Container>
 
-            <Section1 />
             <Banner />
+            <Section1 />
+
 
             <div className='test'></div>
+
+
             <Container fluid className=" py-5 mb-5">
                 <Container className=" py-5">
                     <h1> Trái cây đeii</h1>
-                    <Slider2 />
+                    <Slider2 arr={arr} />
                 </Container>
             </Container>
+            <Container fluid className=" py-5 mb-5">
+                <Container className=" py-5">
+                    <Row>
+                        <Col xs={12}>
+                            <Slider3 arr={arr} />
+                        </Col>
+                    </Row>
+                </Container>
+            </Container>
+
             <div className='test'></div>
         </>
     )

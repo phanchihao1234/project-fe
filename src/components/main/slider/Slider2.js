@@ -12,23 +12,14 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import CardProd from '../card/CardProd';
 
-export default function Slider2() {
+export default function Slider2(props) {
     useEffect(() => {
         AOS.init({
             duration: 2000,
         })
     }, [])
 
-    const arr = [
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-        { id: 1, name: "img1" },
-    ]
+    const { arr } = props
 
     return (
         <>
@@ -44,7 +35,7 @@ export default function Slider2() {
                     // when window width is >= 320px
                     320: {
                         slidesPerView: 1,
-                        spaceBetween: 10,
+                        spaceBetween: 20,
                     },
                     // when window width is >= 480px
                     770: {
@@ -73,24 +64,8 @@ export default function Slider2() {
                     ))
                 }
 
-
             </Swiper>
-            {/* <div className="border border-primary rounded position-relative vesitable-item">
-                <div className="vesitable-img">
-                    <img src={'/images/best-product-1.jpg'} className="img-fluid w-100 rounded-top" alt="" />
-                </div>
-                <div className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: 10, right: 10 }} >Vegetable</div>
-                <div className="p-4 rounded-bottom">
-                    <h4>Parsely</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                        <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                        <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i
-                            className="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                    </div>
-                </div>
-            </div> */}
+
         </>
     )
 }

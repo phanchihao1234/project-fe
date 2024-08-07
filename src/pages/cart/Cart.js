@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from '../../components/header/Header'
-import Footer from '../../components/footer/Footer'
 import SingleHeader from '../../components/header/SingleHeader'
-import Products from '../../components/product/Products'
+import Footer from '../../components/footer/Footer'
+import CartContent from '../../components/cart-content/CartContent'
 
-
-export default function Product() {
-    const title = "Sản phẩm"
-
+export default function Cart() {
+    const title = "Giỏ hàng"
     return (
         <>
             <Header />
             <SingleHeader title={title} />
-            <Products />
+            <CartContent />
             <Footer />
         </>
     )

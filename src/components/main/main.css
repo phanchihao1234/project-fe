@@ -7,8 +7,8 @@
     background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url("./img/hero-img.jpg");
     /* background-image: "/img/hero-img.jpg"; */
     /* , url(/img/hero-img.jpg) */
-    /* background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     margin-top: 100px;
 }

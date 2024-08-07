@@ -7,6 +7,7 @@ const initialState = {
     error: null,
     currentPage: 1,
     totalPage: 30,
+    productDetail: [],
 }
 
 const url = "https://63e9ae764f3c6aa6e7d06a70.mockapi.io/products"
@@ -25,7 +26,7 @@ export const findProducts = createAsyncThunk('products/findProducts', async (nam
 
 export const findByIdProducts = createAsyncThunk('products/findByIdProducts', async (id) => {
     // const res = await axios.get(`${url}?page=${page}&&limit=5`)
-    const res = await axios.get(`${url}?id=${id}`)
+    const res = await axios.get(`${url}/${id}`)
     return res.data
 })
 const productsSlice = createSlice({
@@ -36,7 +37,6 @@ const productsSlice = createSlice({
         builder
             .addCase(fetchProducts.pending, (state) => {
                 state.status = 'loading'
-
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.status = 'succeeded'
@@ -56,6 +56,17 @@ const productsSlice = createSlice({
             .addCase(findProducts.rejected, (state, action) => {
                 state.status = "failed"
                 state.products = action.error.payload
+            })
+            .addCase(findByIdProducts.pending, (state) => {
+                state.status = 'loading'
+            })
+            .addCase(findByIdProducts.fulfilled, (state, action) => {
+                state.status = 'succeeded'
+                state.productDetail = action.payload
+            })
+            .addCase(findByIdProducts.rejected, (state, action) => {
+                state.status = 'failed'
+                state.productDetail = action.error.payload
             })
     }
 

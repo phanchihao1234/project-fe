@@ -100,7 +100,12 @@ export default function Header() {
                             <NavItem className='d-flex'>
                                 <Input placeholder='Tìm kiếm' className='rounded-5 w-50 ms-2' />
                                 <Button className="btn-search btn border border-success btn-md-square rounded-circle bg-white ms-4"><FaSearch className='my-auto iconR' size={18} /></Button>
-                                <Link className=" ms-2 my-auto"><FaShoppingBag size={35} className='iconR' /></Link>
+                                <div className='shopping-cart'>
+                                    <Link to={"/cart"} className=" ms-2 my-auto"><FaShoppingBag size={35} className='iconR' /></Link>
+                                    <span className="qty rounded-circle d-flex align-items-center justify-content-center text-dark px-1">
+                                        1
+                                    </span>
+                                </div>
                                 <Link className=" ms-2 my-auto"><FaUser size={35} className='iconR' /></Link>
                             </NavItem>
                         </Nav>
