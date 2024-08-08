@@ -52,3 +52,18 @@
     color: #ffb524;
     border-color: #ffb524;
 }
+
+.back-to-top {
+    background: #81c408 !important;
+    border: none !important;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 99;
+}

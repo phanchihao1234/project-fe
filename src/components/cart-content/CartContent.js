@@ -5,6 +5,7 @@ import { Button, ButtonGroup, Col, Container, Input, InputGroup, Row, Table } fr
 import './cart-cont.css'
 import { clearCart, removeCart, updateQty } from '../../redux/cartSlice'
 import Swal from 'sweetalert2'
+import imgCartEmpty from '../../images/empty_cart.png'
 
 export default function CartContent() {
     const { carts } = useSelector(state => state.carts)
@@ -46,9 +47,17 @@ export default function CartContent() {
             <Container className='py-5'>
                 <Row>
                     <Col xl={8} lg={7} md={12} sm={12}>
+
                         {
                             carts[0] == null ?
-                                <p>gio hang trong</p>
+                                <>
+                                    <div className='d-flex justify-content-center '>
+                                        <img src={imgCartEmpty} />
+                                        <div>
+                                            <p>Giỏ hàng trống</p>
+                                        </div>
+                                    </div>
+                                </>
                                 :
                                 <>
                                     <Table hover>
@@ -88,11 +97,11 @@ export default function CartContent() {
 
                                                         <td>
                                                             <ButtonGroup className="mt-3" >
-                                                                <Button className="rounded-5 " onClick={() => dispatch(updateQty({ flag: false, id: item.id }))}>
+                                                                <Button className="button rounded-5 " onClick={() => dispatch(updateQty({ flag: false, id: item.id }))}>
                                                                     <FaMinus />
                                                                 </Button>
                                                                 <span className='mx-3'>{item.qty}</span>
-                                                                <Button className="rounded-5 " onClick={() => dispatch(updateQty({ flag: true, id: item.id }))}>
+                                                                <Button className="button rounded-5 " onClick={() => dispatch(updateQty({ flag: true, id: item.id }))}>
                                                                     <FaPlus />
                                                                 </Button>
                                                             </ButtonGroup>
@@ -101,17 +110,17 @@ export default function CartContent() {
                                                             <p className='mt-3'>{item.price * item.qty}</p>
                                                         </td>
                                                         <td>
-                                                            <Button className='mt-3' onClick={() => dispatch(removeCart(item.id))}>X</Button>
+                                                            <Button className=' button mt-3' onClick={() => dispatch(removeCart(item.id))}>X</Button>
                                                         </td>
                                                     </tr>
                                                 )
                                             }
                                         </tbody>
                                     </Table>
-                                    <Button className='mb-3' onClick={() => handle_clear()}>Clear</Button>
                                 </>
-
                         }
+
+                        <Button className='button mb-3' onClick={() => handle_clear()}>Clear</Button>
 
                     </Col>
                     <Col xl={4} lg={5} md={7} sm={12}>
@@ -134,12 +143,12 @@ export default function CartContent() {
                                 <h5 className="mb-0 ps-4 me-4">Total</h5>
                                 <p className="mb-0 pe-4">$99.00</p>
                             </div>
-                            <Button className="btn rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button">Proceed Checkout</Button>
+                            <Button className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button">Proceed Checkout</Button>
                         </div>
                     </Col>
                 </Row>
 
             </Container>
-        </Container>
+        </Container >
     )
 }

@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'reactstrap'
 
 export default function Banner() {
     return (
-        <Container fluid className="my-5" style={{ background: "red" }}>
+        <Container fluid className="my-5" style={{ background: "#ffb524" }}>
             <Container className="banner-1 py-5">
                 <Row className=" g-4 align-items-center">
                     <Col lg={6}>
