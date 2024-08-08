@@ -52,6 +52,7 @@ export default function Main() {
                     <Slider2 arr={arr} />
                 </Container>
             </Container>
+            <div className='test'></div>
             <Container fluid className=" py-5 mb-5">
                 <Container className=" py-5">
                     <Row>
@@ -62,7 +63,7 @@ export default function Main() {
                 </Container>
             </Container>
 
-            <div className='test'></div>
+
         </>
     )
 }

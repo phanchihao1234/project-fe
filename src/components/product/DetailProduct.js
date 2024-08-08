@@ -17,7 +17,7 @@ export default function DetailProduct() {
         dispatch(findByIdProducts(id))
     }, [])
 
-    const [quantity, setQuantity] = useState(1);
+
 
     const arr = [
         { id: 1, name: "img1" },
@@ -29,7 +29,7 @@ export default function DetailProduct() {
         { id: 1, name: "img1" },
         { id: 1, name: "img1" },
     ]
-
+    const [quantity, setQuantity] = useState(1);
     const changeQty = (flag) => {
         if (flag) {
             setQuantity(quantity + 1);

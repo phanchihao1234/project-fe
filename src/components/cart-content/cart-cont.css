@@ -1,0 +1,10 @@
+.img-cart {
+    width: 100px;
+    height: 100px;
+}
+
+.btn {
+    background: #81C408 !important;
+    border: 1px solid #81C408 !important;
+    /* --bs-btn-border-width: #81C408 */
+}

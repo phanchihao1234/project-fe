@@ -5,7 +5,9 @@ import { FaSearch, FaShoppingBag, FaUser } from "react-icons/fa";
 import { IoLocation, IoLocationOutline, IoMailSharp } from "react-icons/io5";
 
 import "./header.css"
+import { useSelector } from 'react-redux';
 export default function Header() {
+    const { carts } = useSelector(state => state.carts)
     const [isShadow, setIsShadow] = useState(false);
     const [topOffset, setTopOffset] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
@@ -47,10 +49,11 @@ export default function Header() {
     return (
         // class="container-fluid fixed-top shadow"
         <Container className={`fixed-top ${isShadow ? 'shadow ' : ''}`} style={{ top: topOffset, }} fluid>
+
             <Container className="topbar  d-none d-lg-block">
                 <div className="d-flex justify-content-between">
                     <div className="top-info ps-2">
-                        <small className="me-3"><IoLocationOutline size={20} className=' ' /> <a href="#" className="text-white">123 Street, New York</a></small>
+                        <small className="me-3"><IoLocationOutline size={20} className=' ' /> <a href="#" className="text-white">123 Hai Bà Trưng, TP. HCM</a></small>
                         <small className="me-3"><IoMailSharp size={20} className=' ' /><a href="#" className="text-white"> Email@Example.com</a></small>
                     </div>
                     <div className="top-link pe-2">
@@ -60,6 +63,7 @@ export default function Header() {
                     </div>
                 </div>
             </Container>
+
             <Container className=' px-0'>
                 <Navbar className='navbar navbar-expand-lg' >
                     <NavbarBrand href="/"><h1 style={{ color: '#81c408', }}>Hao</h1> </NavbarBrand>
@@ -103,7 +107,7 @@ export default function Header() {
                                 <div className='shopping-cart'>
                                     <Link to={"/cart"} className=" ms-2 my-auto"><FaShoppingBag size={35} className='iconR' /></Link>
                                     <span className="qty rounded-circle d-flex align-items-center justify-content-center text-dark px-1">
-                                        1
+                                        {carts.length}
                                     </span>
                                 </div>
                                 <Link className=" ms-2 my-auto"><FaUser size={35} className='iconR' /></Link>
@@ -113,6 +117,7 @@ export default function Header() {
                     </Collapse>
                 </Navbar>
             </Container>
+
         </Container>
     )
 }
