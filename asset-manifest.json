@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/project-fe/static/css/main.cf333616.css",
+    "main.js": "/project-fe/static/js/main.628c0821.js",
+    "static/media/cart-page-header-img.jpg": "/project-fe/static/media/cart-page-header-img.144b125fef5e5f43a332.jpg",
+    "static/media/hero-img.jpg": "/project-fe/static/media/hero-img.358b54f6112aa26ec54f.jpg",
+    "index.html": "/project-fe/index.html",
+    "main.cf333616.css.map": "/project-fe/static/css/main.cf333616.css.map",
+    "main.628c0821.js.map": "/project-fe/static/js/main.628c0821.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf333616.css",
+    "static/js/main.628c0821.js"
+  ]
+}
