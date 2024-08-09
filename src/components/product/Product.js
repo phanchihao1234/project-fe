@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { Button, Col } from 'reactstrap'
 import { addCart } from '../../redux/cartSlice'
 import Swal from 'sweetalert2'
+import Images from '../../images/Images'
 
 export default function Product(props) {
     const dispatch = useDispatch()
@@ -19,11 +20,24 @@ export default function Product(props) {
         });
         dispatch(addCart(item))
     }
+
+    // let imgPath = async (img) => {
+    //     try {
+    //         // await import(`../..${img}`);
+    //         console.log(require(img))
+    //         return await require(img)
+
+    //     } catch (err) {
+    //         console.error("Image not found:", err);
+    //         return '/images/default-image.jpg'; // Fallback image from public folder
+    //     }
+    // };
     return (
         <Col xl={4} lg={6} key={index} >
             <div className="rounded position-relative fruite-item">
                 <div className="fruite-img">
-                    <img src={item.images ? item.images : "/images/best-product-1.jpg"} className="img-fluid w-100 rounded-top" alt="" />
+                    {/* <img src={test} className="img-fluid w-100 rounded-top" /> */}
+                    <img src={item.images ? Images.products[item.images] : test} className="img-fluid w-100 rounded-top" alt="" />
                 </div>
                 <div className="text-white bg-secondary px-3 py-1 rounded position-absolute " style={{ top: 10, left: 10 }} >%</div>
                 <div className="p-4 border border-secondary border-top-0 rounded-bottom">

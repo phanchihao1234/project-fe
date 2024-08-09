@@ -1,7 +1,10 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
+import baner from '../../../images/baner-1.png'
+
 
 export default function Banner() {
+
     return (
         <Container fluid className="my-5" style={{ background: "#ffb524" }}>
             <Container className="banner-1 py-5">
@@ -18,7 +21,7 @@ export default function Banner() {
                     </Col>
                     <Col lg={6}>
                         <div className="position-relative">
-                            <img src={"/images/baner-1.png"} className="img-fluid w-100 rounded" alt="" />
+                            <img src={baner} className="img-fluid w-100 rounded" alt="" />
                             <div className="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute"
                                 style={{ width: 140, height: 140, top: 0, left: 0, }}
                             >

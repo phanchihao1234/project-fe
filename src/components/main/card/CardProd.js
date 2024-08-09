@@ -5,7 +5,7 @@ export default function CardProd() {
         <>
             <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
-                    <img src={'/images/best-product-1.jpg'} className="img-fluid w-100 rounded-top" alt="" />
+                    <img src={'/project-fe#/images/best-product-1.jpg'} className="img-fluid w-100 rounded-top" alt="" />
                 </div>
                 <div className="text-white bg-primary px-3 py-1 rounded position-absolute"
                     style={{ top: 10, right: 10 }} >Vegetable</div>

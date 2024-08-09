@@ -12,6 +12,9 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/effect-cube';
 
 import './slider.css'
+// import img from '../../../../public'
+import imgS1 from '../img/hero-img-1.png'
+import imgS2 from '../img/hero-img-2.jpg'
 
 export default function Slider1() {
     const swiper = useSwiper()
@@ -41,8 +44,8 @@ export default function Slider1() {
                     shadowScale: 0.94,
                 }}
             >
-                <SwiperSlide><img src={'/images/hero-img-1.png'} /></SwiperSlide>
-                <SwiperSlide><img src={'/images/hero-img-2.jpg'} /></SwiperSlide>
+                <SwiperSlide><img src={imgS1} /></SwiperSlide>
+                <SwiperSlide><img src={imgS2} /></SwiperSlide>
 
             </Swiper>
         </>
