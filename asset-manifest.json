@@ -1,25 +1,33 @@
 {
   "files": {
-    "main.css": "/project-fe/static/css/main.4b82bd34.css",
-    "main.js": "/project-fe/static/js/main.7578a548.js",
+    "main.css": "/project-fe/static/css/main.ecc8103e.css",
+    "main.js": "/project-fe/static/js/main.e9fe42d0.js",
     "static/media/hero-img-1.png": "/project-fe/static/media/hero-img-1.f9c1eaf592da495a3771.png",
     "static/media/baner-1.png": "/project-fe/static/media/baner-1.7bb17fda77530c276b59.png",
     "static/media/hero-img-2.jpg": "/project-fe/static/media/hero-img-2.ea5a00d91935f9f96df5.jpg",
+    "static/media/best-product-2.jpg": "/project-fe/static/media/best-product-2.06782b8bf04214d0ed53.jpg",
+    "static/media/banner-fruits.jpg": "/project-fe/static/media/banner-fruits.471a8a1971c359706c09.jpg",
+    "static/media/best-product-1.jpg": "/project-fe/static/media/best-product-1.d3fa77ebc6f48d1ee852.jpg",
     "static/media/fruite-item-2.jpg": "/project-fe/static/media/fruite-item-2.8c29e196f97fa6c25a86.jpg",
+    "static/media/featur-3.jpg": "/project-fe/static/media/featur-3.328da918c883ae16908d.jpg",
+    "static/media/best-product-4.jpg": "/project-fe/static/media/best-product-4.e8f41a31400fce9dc9f3.jpg",
+    "static/media/best-product-6.jpg": "/project-fe/static/media/best-product-6.ed577c454db8317fd5ea.jpg",
     "static/media/fruite-item-1.jpg": "/project-fe/static/media/fruite-item-1.da6b4f624a35b8235e11.jpg",
     "static/media/cart-page-header-img.jpg": "/project-fe/static/media/cart-page-header-img.144b125fef5e5f43a332.jpg",
     "static/media/fruite-item-4.jpg": "/project-fe/static/media/fruite-item-4.09ec5053b802713a5b8a.jpg",
+    "static/media/best-product-3.jpg": "/project-fe/static/media/best-product-3.448267c2f1f1afc46d30.jpg",
     "static/media/fruite-item-6.jpg": "/project-fe/static/media/fruite-item-6.09bb0bffd034e6e76b34.jpg",
+    "static/media/best-product-5.jpg": "/project-fe/static/media/best-product-5.432b85050206c76b34a6.jpg",
     "static/media/fruite-item-5.jpg": "/project-fe/static/media/fruite-item-5.3fe0fcb84bbe40f07c65.jpg",
     "static/media/fruite-item-3.jpg": "/project-fe/static/media/fruite-item-3.7776a982d3dadde617ca.jpg",
     "static/media/hero-img.jpg": "/project-fe/static/media/hero-img.358b54f6112aa26ec54f.jpg",
     "static/media/empty_cart.png": "/project-fe/static/media/empty_cart.23a91c993668a90aeef6.png",
     "index.html": "/project-fe/index.html",
-    "main.4b82bd34.css.map": "/project-fe/static/css/main.4b82bd34.css.map",
-    "main.7578a548.js.map": "/project-fe/static/js/main.7578a548.js.map"
+    "main.ecc8103e.css.map": "/project-fe/static/css/main.ecc8103e.css.map",
+    "main.e9fe42d0.js.map": "/project-fe/static/js/main.e9fe42d0.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b82bd34.css",
-    "static/js/main.7578a548.js"
+    "static/css/main.ecc8103e.css",
+    "static/js/main.e9fe42d0.js"
   ]
 }
