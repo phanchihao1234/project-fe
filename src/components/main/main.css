@@ -1,3 +1,7 @@
+:root {
+    width: 100vw;
+}
+
 .test {
     height: 50vh;
     background-color: green;

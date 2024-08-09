@@ -24,7 +24,7 @@ export default function Slider1() {
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube, Autoplay]}
                 autoplay={{
-                    delay: 2000,
+                    delay: 4000,
                     disableOnInteraction: true,
                 }}
                 // onAutoplayTimeLeft
@@ -32,7 +32,7 @@ export default function Slider1() {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
+                // scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 effect={'cube'}
@@ -42,6 +42,28 @@ export default function Slider1() {
                     slideShadows: true,
                     shadowOffset: 20,
                     shadowScale: 0.94,
+                }}
+                breakpoints={{
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    // when window width is >= 480px
+                    770: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    // when window width is >= 640px
+                    996: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    // when window width is >= 1024px
+                    1404: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
                 }}
             >
                 <SwiperSlide><img src={imgS1} /></SwiperSlide>

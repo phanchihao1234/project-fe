@@ -1,56 +1,62 @@
 import React from 'react'
+import "./sec.css"
+import { FaCarSide, FaRetweet } from 'react-icons/fa'
+import { RiSecurePaymentFill } from "react-icons/ri";
+import { IoCall } from 'react-icons/io5';
+import { Col, Container, Row } from 'reactstrap';
+
 
 export default function Section1() {
     return (
-        <div class="container-fluid featurs py-5">
-            <div class="container py-5">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="featurs-item text-center rounded bg-light p-4">
-                            <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fas fa-car-side fa-3x text-white"></i>
+        <Container fluid className="d featurs py-5">
+            <Container className=" py-5">
+                <Row className="g-4">
+                    <Col xl={3} md={6} lg={6} data-aos="fade-right" data-aos-delay="1500">
+                        <div className="featurs-item text-center rounded bg-light p-4">
+                            <div className="featurs-icon btn-square rounded-circle mb-5 mx-auto">
+                                <a><FaCarSide size={60} className='icon-section' /></a>
                             </div>
-                            <div class="featurs-content text-center">
+                            <div className="featurs-content text-center">
                                 <h5>Free Shipping</h5>
-                                <p class="mb-0">Free on order over $300</p>
+                                <p className="mb-0">Free on order over $300</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="featurs-item text-center rounded bg-light p-4">
-                            <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fas fa-user-shield fa-3x text-white"></i>
+                    </Col>
+                    <Col xl={3} md={6} lg={6} data-aos="fade-right" data-aos-delay="1000">
+                        <div className="featurs-item text-center rounded bg-light p-4">
+                            <div className="featurs-icon btn-square rounded-circle mb-5 mx-auto">
+                                <RiSecurePaymentFill size={60} className='icon-section' />
                             </div>
-                            <div class="featurs-content text-center">
+                            <div className="featurs-content text-center">
                                 <h5>Security Payment</h5>
-                                <p class="mb-0">100% security payment</p>
+                                <p className="mb-0">100% security payment</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="featurs-item text-center rounded bg-light p-4">
-                            <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                    </Col>
+                    <Col xl={3} md={6} lg={6} data-aos="fade-right" data-aos-delay="500">
+                        <div className="featurs-item text-center rounded bg-light p-4">
+                            <div className="featurs-icon btn-square rounded-circle mb-5 mx-auto">
+                                <FaRetweet size={60} className='icon-section' />
                             </div>
-                            <div class="featurs-content text-center">
+                            <div className="featurs-content text-center">
                                 <h5>30 Day Return</h5>
-                                <p class="mb-0">30 day money guarantee</p>
+                                <p className="mb-0">30 day money guarantee</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="featurs-item text-center rounded bg-light p-4">
-                            <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
-                                <i class="fa fa-phone-alt fa-3x text-white"></i>
+                    </Col>
+                    <Col xl={3} md={6} lg={6} data-aos="fade-right">
+                        <div className="featurs-item text-center rounded bg-light p-4">
+                            <div className="featurs-icon btn-square rounded-circle mb-5 mx-auto">
+                                <IoCall size={60} className='icon-section' />
                             </div>
-                            <div class="featurs-content text-center">
+                            <div className="featurs-content text-center">
                                 <h5>24/7 Support</h5>
-                                <p class="mb-0">Support every time fast</p>
+                                <p className="mb-0">Support every time fast</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     )
 }

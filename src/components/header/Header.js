@@ -1,13 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-import { Button, Collapse, Container, DropdownItem, DropdownMenu, DropdownToggle, Input, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, UncontrolledDropdown } from 'reactstrap';
+import { Link, NavLink, } from 'react-router-dom';
+import {
+    Button, Collapse, Container, DropdownItem, DropdownMenu, DropdownToggle,
+    Input, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, UncontrolledDropdown
+} from 'reactstrap';
 import { FaSearch, FaShoppingBag, FaUser } from "react-icons/fa";
 import { IoLocation, IoLocationOutline, IoMailSharp } from "react-icons/io5";
 
 import "./header.css"
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts, findProducts } from '../../redux/productsSlice';
 export default function Header() {
     const { carts } = useSelector(state => state.carts)
+    const dispatch = useDispatch()
+    const [keyword, setKeyword] = useState("")
+    const [currentPage, setCurrentPage] = useState(1)
+
+    const handle_search = () => {
+        dispatch(findProducts(keyword))
+        setKeyword("")
+    }
+
+
     const [isShadow, setIsShadow] = useState(false);
     const [topOffset, setTopOffset] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
@@ -65,11 +79,11 @@ export default function Header() {
             </Container>
 
             <Container className=' px-0'>
-                <Navbar className='navbar navbar-expand-lg' >
-                    <NavbarBrand href="/"><h1 style={{ color: '#81c408', }}>Hao</h1> </NavbarBrand>
+                <Navbar className='navbar navbar-expand-xl' >
+                    <NavLink to={"/"} className={"nav-link"}><h1 style={{ color: '#81c408' }}>Hao</h1> </NavLink>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="m-auto " navbar>
+                        <Nav className="m-auto" navbar >
                             <NavItem>
                                 <Link className='nav-link' to={"/"}>Trang chủ</Link>
                             </NavItem>
@@ -78,17 +92,6 @@ export default function Header() {
                                     Sản phẩm
                                 </Link>
                             </NavItem>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Pages
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>Option 1</DropdownItem>
-                                    <DropdownItem>Option 2</DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>Reset</DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
                             <NavItem>
                                 <Link to={"/contact"} className='nav-link'>
                                     Liên hệ
@@ -96,24 +99,50 @@ export default function Header() {
                             </NavItem>
                             <NavItem>
                                 <Link to={"*"} className='nav-link'>
-                                    Đăng nhập
+                                    Tin tức
                                 </Link>
                             </NavItem>
                         </Nav>
-                        <Nav className="ms-5" navbar>
-                            <NavItem className='d-flex'>
-                                <Input placeholder='Tìm kiếm' className='rounded-5 w-50 ms-2' />
-                                <Button className="btn-search btn border border-success btn-md-square rounded-circle bg-white ms-4"><FaSearch className='my-auto iconR' size={18} /></Button>
-                                <div className='shopping-cart'>
-                                    <Link to={"/cart"} className=" ms-2 my-auto"><FaShoppingBag size={35} className='iconR' /></Link>
-                                    <span className="qty rounded-circle d-flex align-items-center justify-content-center text-dark px-1">
+                        <Nav className="m-auto" navar>
+                            <NavItem className='d-flex justify-content-center me-1'>
+                                <Input placeholder='Tìm kiếm' className='rounded-5 w-100 '
+                                    value={keyword} onChange={(e) => setKeyword(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key == "Enter") {
+                                            if (keyword == "") {
+                                                dispatch(fetchProducts(currentPage))
+                                                // navigate('/product')
+                                            } else {
+                                                handle_search()
+                                            }
+                                        }
+                                    }}
+                                />
+                                <Button className="btn-search btn border border-success btn-md-square rounded-circle bg-white ">
+                                    <FaSearch className='my-auto iconR' size={18} />
+                                </Button>
+                            </NavItem>
+                            <NavItem>
+                                <div className='shopping-cart ms-2'>
+                                    <Link to={"/cart"} className=""><FaShoppingBag size={30} className='iconR' /></Link>
+                                    <span className="qty rounded-circle d-flex align-items-center justify-content-center text-dark ">
                                         {carts.length}
                                     </span>
                                 </div>
-                                <Link className=" ms-2 my-auto"><FaUser size={35} className='iconR' /></Link>
+                                <UncontrolledDropdown nav inNavbar>
+                                    <DropdownToggle nav caret>
+                                        <Link className="ms-5 my-auto"><FaUser size={30} className='iconR' /></Link>
+                                    </DropdownToggle>
+                                    <DropdownMenu right>
+                                        <DropdownItem><NavLink to={"/login"} className={"nav-link"}>Đăng nhập</NavLink></DropdownItem>
+                                        <DropdownItem><NavLink to={"*"} className={"nav-link"}>Thông tin user</NavLink></DropdownItem>
+                                        <DropdownItem divider />
+                                        <DropdownItem><NavLink to={"/"} className={"nav-link"}>Đăng xu</NavLink></DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown>
                             </NavItem>
-                        </Nav>
 
+                        </Nav>
                     </Collapse>
                 </Navbar>
             </Container>

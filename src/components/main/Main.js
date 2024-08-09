@@ -28,22 +28,22 @@ export default function Main() {
             <Container fluid className=" py-5 mb-5 hero-header">
                 <Container className=" py-5">
                     <Row className="g-5 align-items-center">
-                        <Col md={12} lg={7} >
+                        <Col md={12} lg={7} data-aos="fade-right">
                             <h4 className="mb-3 text-secondary">100% Organic Foods</h4>
                             <h1 className="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
                         </Col>
-                        <Col md={12} lg={5} >
+                        <Col md={12} lg={5} data-aos="fade-left">
                             <Slider1 />
                         </Col>
                     </Row>
                 </Container>
             </Container>
 
-            <Banner />
+
             <Section1 />
 
 
-            <div className='test'></div>
+            {/* <div className='test'></div> */}
 
 
             <Container fluid className=" py-5 mb-5">
@@ -52,16 +52,13 @@ export default function Main() {
                     <Slider2 arr={arr} />
                 </Container>
             </Container>
-            <div className='test'></div>
-            <Container fluid className=" py-5 mb-5">
+            {/* <div className='test'></div> */}
+            <Banner />
+            {/* <Container fluid className=" py-5 mb-5">
                 <Container className=" py-5">
-                    <Row>
-                        <Col xs={12}>
-                            <Slider3 arr={arr} />
-                        </Col>
-                    </Row>
+                    <Slider3 arr={arr} />
                 </Container>
-            </Container>
+            </Container> */}
 
 
         </>

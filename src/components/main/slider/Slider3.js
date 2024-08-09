@@ -25,7 +25,7 @@ export default function Slider3(props) {
                 slidesPerView={4}
                 spaceBetween={30}
                 coverflowEffect={{
-                    rotate: 30,
+                    rotate: 0,
                     stretch: 0,
                     depth: 100,
                     modifier: 1,
@@ -38,17 +38,17 @@ export default function Slider3(props) {
                     // when window width is >= 320px
                     320: {
                         slidesPerView: 1,
-                        spaceBetween: 30,
+                        spaceBetween: 10,
                     },
                     // when window width is >= 480px
                     770: {
                         slidesPerView: 2,
-                        spaceBetween: 30,
+                        spaceBetween: 10,
                     },
                     // when window width is >= 640px
                     996: {
                         slidesPerView: 3,
-                        spaceBetween: 30,
+                        spaceBetween: 10,
                     },
                     // when window width is >= 1024px
                     1404: {

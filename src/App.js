@@ -7,6 +7,8 @@ import Product from './pages/product/Product';
 import NotFound from './pages/404/NotFound';
 import ProductDetail from './pages/product/ProductDetail';
 import Cart from './pages/cart/Cart';
+import Checkout from './pages/checkout/Checkout';
+import Login from './pages/login/Login';
 
 
 
@@ -20,6 +22,8 @@ export default function App() {
                     <Route path="/product" element={<Product />} />
                     <Route path="/detail/:id" element={<ProductDetail />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
             </HashRouter>

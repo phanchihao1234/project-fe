@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts, findProducts } from '../../redux/productsSlice'
 import Pagination from "react-js-pagination";
 import { Navigate, useNavigate } from 'react-router-dom'
+import Images from '../../images/Images'
 
 
 export default function Products() {
@@ -51,7 +52,6 @@ export default function Products() {
                                                 } else {
                                                     handle_search()
                                                 }
-
                                             }
                                         }}
                                     />
@@ -115,7 +115,7 @@ export default function Products() {
                                         <h4>Khuyến mãi</h4>
                                         <div class="d-flex align-items-center justify-content-start">
                                             <div class="rounded me-4" style={{ width: 100, height: 100 }}>
-                                                <img src="/images/featur-3.jpg" class="img-fluid rounded" alt="" />
+                                                <img src={Images.featur} class="img-fluid rounded" alt="" />
                                             </div>
                                             <div>
                                                 <h6 class="mb-2">Name</h6>

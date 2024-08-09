@@ -1,11 +1,12 @@
 import React from 'react'
+import Images from '../../../images/Images'
 
 export default function CardProd() {
     return (
         <>
             <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
-                    <img src={'/project-fe#/images/best-product-1.jpg'} className="img-fluid w-100 rounded-top" alt="" />
+                    <img src={Images.bestProduct["img1"]} className="img-fluid w-100 rounded-top" alt="" />
                 </div>
                 <div className="text-white bg-primary px-3 py-1 rounded position-absolute"
                     style={{ top: 10, right: 10 }} >Vegetable</div>

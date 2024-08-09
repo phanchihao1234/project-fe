@@ -6,6 +6,7 @@ import './cart-cont.css'
 import { clearCart, removeCart, updateQty } from '../../redux/cartSlice'
 import Swal from 'sweetalert2'
 import imgCartEmpty from '../../images/empty_cart.png'
+import Images from '../../images/Images'
 
 export default function CartContent() {
     const { carts } = useSelector(state => state.carts)
@@ -85,7 +86,7 @@ export default function CartContent() {
                                                     <tr key={index}>
                                                         <td >
                                                             <div >
-                                                                <img className='img-cart img-fluid' src={item.images} />
+                                                                <img className='img-cart img-fluid' src={Images.products[item.images]} />
                                                             </div>
                                                         </td>
                                                         <td>

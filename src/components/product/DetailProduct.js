@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { findByIdProducts } from '../../redux/productsSlice';
 import Slider3 from '../main/slider/Slider3';
+import Images from '../../images/Images';
 
 export default function DetailProduct() {
     const { id } = useParams()
@@ -51,7 +52,7 @@ export default function DetailProduct() {
                             <Col lg={6} md={12} sm={12}>
                                 <div className="">
                                     <a href="#">
-                                        <img src={productDetail.images} className="img-fluid rounded" />
+                                        <img src={Images.bestProduct[productDetail.images]} className="img-fluid rounded" />
                                     </a>
                                 </div>
                             </Col>
@@ -182,7 +183,7 @@ export default function DetailProduct() {
                                 <h4 className='fw-bold '>Khuyến mãi</h4 >
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style={{ width: 100, height: 100 }}>
-                                        <img src="/images/featur-3.jpg" class="img-fluid rounded" alt="" />
+                                        <img src={Images.featur} class="img-fluid rounded" alt="" />
                                     </div>
                                     <div>
                                         <h6 class="mb-2">Name</h6>
@@ -205,7 +206,7 @@ export default function DetailProduct() {
                         <Col lg={12}>
                             <div className="position-relative ">
                                 <h4 className="fw-bold mt-5 ">Banner</h4>
-                                <img src={"images/banner-fruits.jpg"} className="img-fluid w-100 rounded" alt="" />
+                                <img src={Images.banner} className="img-fluid w-100 rounded" alt="" />
                                 <div className="banner">
                                     <p>Fresh</p>
                                     <p>Fruits</p>

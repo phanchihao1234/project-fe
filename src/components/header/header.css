@@ -61,10 +61,26 @@
     position: relative;
 }
 
-.qty {
+.shopping-cart .iconR {
+    position: absolute;
+    top: 7px;
+}
+
+/* .shopping-cart .cart-header {
     position: absolute;
     top: 0;
-    left: 28px;
+    left: 0;
+} */
+
+/* .aaaaa {
+    width: 100%;
+    overflow: hidden;
+} */
+
+.qty {
+    position: absolute;
+    top: 4px;
+    left: 18px;
     height: 20px;
     min-width: 20px;
     background: #ffb524;
