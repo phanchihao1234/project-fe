@@ -1,16 +1,25 @@
 {
   "files": {
     "main.css": "/project-fe/static/css/main.4b82bd34.css",
-    "main.js": "/project-fe/static/js/main.52a24f57.js",
+    "main.js": "/project-fe/static/js/main.7578a548.js",
+    "static/media/hero-img-1.png": "/project-fe/static/media/hero-img-1.f9c1eaf592da495a3771.png",
+    "static/media/baner-1.png": "/project-fe/static/media/baner-1.7bb17fda77530c276b59.png",
+    "static/media/hero-img-2.jpg": "/project-fe/static/media/hero-img-2.ea5a00d91935f9f96df5.jpg",
+    "static/media/fruite-item-2.jpg": "/project-fe/static/media/fruite-item-2.8c29e196f97fa6c25a86.jpg",
+    "static/media/fruite-item-1.jpg": "/project-fe/static/media/fruite-item-1.da6b4f624a35b8235e11.jpg",
     "static/media/cart-page-header-img.jpg": "/project-fe/static/media/cart-page-header-img.144b125fef5e5f43a332.jpg",
+    "static/media/fruite-item-4.jpg": "/project-fe/static/media/fruite-item-4.09ec5053b802713a5b8a.jpg",
+    "static/media/fruite-item-6.jpg": "/project-fe/static/media/fruite-item-6.09bb0bffd034e6e76b34.jpg",
+    "static/media/fruite-item-5.jpg": "/project-fe/static/media/fruite-item-5.3fe0fcb84bbe40f07c65.jpg",
+    "static/media/fruite-item-3.jpg": "/project-fe/static/media/fruite-item-3.7776a982d3dadde617ca.jpg",
     "static/media/hero-img.jpg": "/project-fe/static/media/hero-img.358b54f6112aa26ec54f.jpg",
     "static/media/empty_cart.png": "/project-fe/static/media/empty_cart.23a91c993668a90aeef6.png",
     "index.html": "/project-fe/index.html",
     "main.4b82bd34.css.map": "/project-fe/static/css/main.4b82bd34.css.map",
-    "main.52a24f57.js.map": "/project-fe/static/js/main.52a24f57.js.map"
+    "main.7578a548.js.map": "/project-fe/static/js/main.7578a548.js.map"
   },
   "entrypoints": [
     "static/css/main.4b82bd34.css",
-    "static/js/main.52a24f57.js"
+    "static/js/main.7578a548.js"
   ]
 }
