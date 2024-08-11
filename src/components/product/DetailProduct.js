@@ -218,7 +218,7 @@ export default function DetailProduct() {
 
                 </Row>
                 <h1 class="fw-bold mb-0">Mùa này kó</h1>
-                <Slider3 arr={arr} />
+                <Slider2 arr={arr} />
             </Container>
         </Container>
     )

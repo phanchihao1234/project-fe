@@ -20,6 +20,7 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async (p
 
 export const findProducts = createAsyncThunk('products/findProducts', async (name, page) => {
     // const res = await axios.get(`${url}?page=${page}&&limit=5`)
+    //&&page=${page}&&limit=6
     const res = await axios.get(`${url}?name=${name}`)
     return res.data
 })

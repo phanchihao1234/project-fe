@@ -7,10 +7,13 @@ import { clearCart, removeCart, updateQty } from '../../redux/cartSlice'
 import Swal from 'sweetalert2'
 import imgCartEmpty from '../../images/empty_cart.png'
 import Images from '../../images/Images'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function CartContent() {
     const { carts } = useSelector(state => state.carts)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+   
     console.log(carts)
     const subTotal = () => {
         let sum = 0
@@ -40,14 +43,13 @@ export default function CartContent() {
                 dispatch(clearCart())
             }
         });
-
     }
 
     return (
         <Container fluid className='py-5'>
             <Container className='py-5'>
                 <Row>
-                    <Col xl={8} lg={7} md={12} sm={12}>
+                    <Col xl={8} lg={7} md={12} sm={12} xs={12} >
 
                         {
                             carts[0] == null ?
@@ -85,9 +87,7 @@ export default function CartContent() {
                                                 carts.map((item, index) =>
                                                     <tr key={index}>
                                                         <td >
-                                                            <div >
-                                                                <img className='img-cart img-fluid' src={Images.products[item.images]} />
-                                                            </div>
+                                                            <img className='img-cart img-fluid' src={Images.products[item.images]} />
                                                         </td>
                                                         <td>
                                                             <p className='mt-3'>{item.name}</p>
@@ -118,10 +118,11 @@ export default function CartContent() {
                                             }
                                         </tbody>
                                     </Table>
+                                    <Button className='button mb-3' onClick={() => handle_clear()}>Clear</Button>
                                 </>
                         }
 
-                        <Button className='button mb-3' onClick={() => handle_clear()}>Clear</Button>
+                       
 
                     </Col>
                     <Col xl={4} lg={5} md={7} sm={12}>
@@ -144,7 +145,21 @@ export default function CartContent() {
                                 <h5 className="mb-0 ps-4 me-4">Total</h5>
                                 <p className="mb-0 pe-4">$99.00</p>
                             </div>
-                            <Button className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button">Proceed Checkout</Button>
+                            {
+                               carts[0] == null?
+                            <Button disabled
+                            className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button"
+                                onClick={()=>(
+                                    navigate("/checkout")
+                                )}
+                            > Thanh toán</Button>:
+                            <Button 
+                            className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button"
+                                onClick={()=>(
+                                    navigate("/checkout")
+                                )}
+                            > Thanh toán</Button>
+                            }
                         </div>
                     </Col>
                 </Row>

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 import Images from '../../images/Images'
 
 export default function Product(props) {
-    console.log(Images)
+    // console.log(Images)
     const dispatch = useDispatch()
     const { index, item, error } = props
     const handle_addCart = (item) => {

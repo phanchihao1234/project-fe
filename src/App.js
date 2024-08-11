@@ -9,6 +9,7 @@ import ProductDetail from './pages/product/ProductDetail';
 import Cart from './pages/cart/Cart';
 import Checkout from './pages/checkout/Checkout';
 import Login from './pages/login/Login';
+import SignUp from './pages/login/SignUp';
 
 
 
@@ -24,6 +25,7 @@ export default function App() {
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path='/sign-up' element={<SignUp/>} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
             </HashRouter>

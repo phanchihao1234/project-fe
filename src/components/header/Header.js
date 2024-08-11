@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink, } from 'react-router-dom';
+import { Link, NavLink, useNavigate, } from 'react-router-dom';
 import {
     Button, Collapse, Container, DropdownItem, DropdownMenu, DropdownToggle,
     Input, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, UncontrolledDropdown
@@ -13,12 +13,14 @@ import { fetchProducts, findProducts } from '../../redux/productsSlice';
 export default function Header() {
     const { carts } = useSelector(state => state.carts)
     const dispatch = useDispatch()
+    const navigate =useNavigate()
     const [keyword, setKeyword] = useState("")
     const [currentPage, setCurrentPage] = useState(1)
 
     const handle_search = () => {
+        navigate("/product")
         dispatch(findProducts(keyword))
-        setKeyword("")
+        setKeyword("") 
     }
 
 
@@ -60,6 +62,12 @@ export default function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [setTopOffset]);
+
+    const handle_logout=()=>{
+        localStorage.removeItem("login");
+        window.location.reload();
+    }
+    const info = JSON.parse(localStorage.getItem("login"))
     return (
         // class="container-fluid fixed-top shadow"
         <Container className={`fixed-top ${isShadow ? 'shadow ' : ''}`} style={{ top: topOffset, }} fluid>
@@ -118,30 +126,41 @@ export default function Header() {
                                         }
                                     }}
                                 />
-                                <Button className="btn-search btn border border-success btn-md-square rounded-circle bg-white ">
+                                {/* <Button className="btn-search btn border border-success btn-md-square rounded-circle bg-white ">
                                     <FaSearch className='my-auto iconR' size={18} />
-                                </Button>
+                                </Button> */}
                             </NavItem>
+
+                            <UncontrolledDropdown nav inNavbar >
+                                <DropdownToggle nav caret className='drop-down' >
+                                    <Link className="ms-5 my-auto"><FaUser size={30} className='iconR' /></Link>
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                    {
+                                        info ?
+                                            <>
+                                                <DropdownItem><NavLink className={"drop-down-link"}>Hello, {info.name}</NavLink></DropdownItem>
+                                                <DropdownItem><NavLink to={"*"} className={"drop-down-link"}>Thông tin user</NavLink></DropdownItem>
+                                                <DropdownItem><NavLink onClick={handle_logout} className={"drop-down-link"}>Đăng xuất</NavLink></DropdownItem>
+                                            </>
+                                            :
+                                            <>
+                                                <DropdownItem><NavLink to={"/login"} className={"drop-down-link "}>Đăng nhập</NavLink></DropdownItem>
+                                                <DropdownItem><NavLink to={"/sign-up"} className={"drop-down-link"}>Đăng ký</NavLink></DropdownItem>
+                                            </>
+                                    }
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+
                             <NavItem>
-                                <div className='shopping-cart ms-2'>
+                                <div className='shopping-cart me-5 '>
                                     <Link to={"/cart"} className=""><FaShoppingBag size={30} className='iconR' /></Link>
                                     <span className="qty rounded-circle d-flex align-items-center justify-content-center text-dark ">
                                         {carts.length}
                                     </span>
                                 </div>
-                                <UncontrolledDropdown nav inNavbar>
-                                    <DropdownToggle nav caret>
-                                        <Link className="ms-5 my-auto"><FaUser size={30} className='iconR' /></Link>
-                                    </DropdownToggle>
-                                    <DropdownMenu right>
-                                        <DropdownItem><NavLink to={"/login"} className={"nav-link"}>Đăng nhập</NavLink></DropdownItem>
-                                        <DropdownItem><NavLink to={"*"} className={"nav-link"}>Thông tin user</NavLink></DropdownItem>
-                                        <DropdownItem divider />
-                                        <DropdownItem><NavLink to={"/"} className={"nav-link"}>Đăng xu</NavLink></DropdownItem>
-                                    </DropdownMenu>
-                                </UncontrolledDropdown>
-                            </NavItem>
 
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
