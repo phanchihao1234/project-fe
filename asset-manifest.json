@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-fe/static/css/main.ecc8103e.css",
-    "main.js": "/project-fe/static/js/main.e9fe42d0.js",
+    "main.css": "/project-fe/static/css/main.3854e37d.css",
+    "main.js": "/project-fe/static/js/main.7882a591.js",
     "static/media/hero-img-1.png": "/project-fe/static/media/hero-img-1.f9c1eaf592da495a3771.png",
     "static/media/baner-1.png": "/project-fe/static/media/baner-1.7bb17fda77530c276b59.png",
     "static/media/hero-img-2.jpg": "/project-fe/static/media/hero-img-2.ea5a00d91935f9f96df5.jpg",
@@ -23,11 +23,11 @@
     "static/media/hero-img.jpg": "/project-fe/static/media/hero-img.358b54f6112aa26ec54f.jpg",
     "static/media/empty_cart.png": "/project-fe/static/media/empty_cart.23a91c993668a90aeef6.png",
     "index.html": "/project-fe/index.html",
-    "main.ecc8103e.css.map": "/project-fe/static/css/main.ecc8103e.css.map",
-    "main.e9fe42d0.js.map": "/project-fe/static/js/main.e9fe42d0.js.map"
+    "main.3854e37d.css.map": "/project-fe/static/css/main.3854e37d.css.map",
+    "main.7882a591.js.map": "/project-fe/static/js/main.7882a591.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecc8103e.css",
-    "static/js/main.e9fe42d0.js"
+    "static/css/main.3854e37d.css",
+    "static/js/main.7882a591.js"
   ]
 }
