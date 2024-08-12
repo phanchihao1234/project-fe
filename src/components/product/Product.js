@@ -15,7 +15,7 @@ export default function Product(props) {
         Swal.fire({
             position: "center",
             icon: "success",
-            title: "Sản phẩm đã có trong giỏ hèng",
+            title: "Sản phẩm đã có trong giỏ hàng",
             showConfirmButton: false,
             timer: 1000
         });

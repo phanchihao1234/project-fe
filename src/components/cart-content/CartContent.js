@@ -13,7 +13,7 @@ export default function CartContent() {
     const { carts } = useSelector(state => state.carts)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-   
+
     console.log(carts)
     const subTotal = () => {
         let sum = 0
@@ -122,7 +122,7 @@ export default function CartContent() {
                                 </>
                         }
 
-                       
+
 
                     </Col>
                     <Col xl={4} lg={5} md={7} sm={12}>
@@ -131,7 +131,7 @@ export default function CartContent() {
                                 <h1 className="display-6 mb-4">Cart <span className="fw-normal">Total</span></h1>
                                 <div className="d-flex justify-content-between mb-4">
                                     <h5 className="mb-0 me-4">Subtotal:</h5>
-                                    <p className="mb-0">{subTotal1}</p>
+                                    <p className="mb-0">{subTotal1} ₫</p>
                                 </div>
                                 <div className="d-flex justify-content-between">
                                     <h5 className="mb-0 me-4">Shipping</h5>
@@ -143,22 +143,22 @@ export default function CartContent() {
                             </div>
                             <div className="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                                 <h5 className="mb-0 ps-4 me-4">Total</h5>
-                                <p className="mb-0 pe-4">$99.00</p>
+                                <p className="mb-0 pe-4">{subTotal1} ₫</p>
                             </div>
                             {
-                               carts[0] == null?
-                            <Button disabled
-                            className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button"
-                                onClick={()=>(
-                                    navigate("/checkout")
-                                )}
-                            > Thanh toán</Button>:
-                            <Button 
-                            className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button"
-                                onClick={()=>(
-                                    navigate("/checkout")
-                                )}
-                            > Thanh toán</Button>
+                                carts[0] == null ?
+                                    <Button disabled
+                                        className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button"
+                                        onClick={() => (
+                                            navigate("/checkout")
+                                        )}
+                                    > Thanh toán</Button> :
+                                    <Button
+                                        className="button rounded-pill px-4 py-3 text-uppercase mb-4 ms-4" type="button"
+                                        onClick={() => (
+                                            navigate("/checkout")
+                                        )}
+                                    > Thanh toán</Button>
                             }
                         </div>
                     </Col>
